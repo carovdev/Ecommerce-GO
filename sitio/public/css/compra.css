@@ -1,0 +1,378 @@
+*{
+	font-family: 'Roboto';
+}
+
+.compra #progressbar {		
+    overflow: hidden;
+    counter-reset: step;
+    padding: 0;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+.compra #progressbar .finalizar a{
+color:#c9b391;
+
+}
+.carrito a{
+    text-decoration: none;
+}
+
+.compra #progressbar .cart a, .pagos a {
+    color: black;
+}
+
+
+
+.compra #progressbar li {
+list-style-type: none;
+text-transform: uppercase;
+font-size: 9px;
+width: 33.33%;
+float: left;
+position: relative;
+margin-top: 90px;
+}
+
+.compra #progressbar li:before {
+content: counter(step);
+counter-increment: step;
+width: 20px;
+line-height: 20px;
+display: block;
+font-size: 10px;
+color: white;
+background: #1F1D1D;;
+border-radius: 3px;
+margin: 0 auto 5px auto;
+}
+/*progressbar conectores*/
+.compra #progressbar li:after {
+content: '';
+width: 100%;
+height: 2px;
+background: white;
+position: absolute;
+left: -50%;
+top: 9px;
+z-index: -1; 
+}
+.compra #progressbar li:first-child:after {
+content: none; 
+}
+
+
+
+
+.compra{
+	font-family: 'Roboto';
+	outline: none;
+}
+
+.compra .contenedor{
+	min-height: 100vh;
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
+	padding-bottom: 60px;
+	
+}
+
+
+
+.compra .contenedor form{
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+	padding: 20px;
+	width: 100%;
+	height: 480px;
+	padding-top: 160px;
+	font-family: 'Roboto';
+}
+
+.compra .contenedor form .inputBox{
+	margin-top: 20px;
+}
+
+.compra .contenedor form .inputBox span{
+	display: block;
+	color: #999;
+	padding-bottom: 5px;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.compra .contenedor form .inputBox input,
+.compra .contenedor form .inputBox select{
+	width: 100%;
+	padding: 10px;
+	box-shadow: -10px -10px 20px 0px #fff9,
+  -4px -4px 5px 0px #fff9,
+  7px 7px 20px 0px #0002,
+  4px 4px 5px 0px #0001,
+  inset 0px 0px 0px 0px #0001,
+  inset 0px 0px 0px 0px #fff9,
+  inset 0px 0px 0px 0px #0001;
+  	transition: box-shadow 0.6 cubic-bezier(0.79,0.21,0.06,0.81);
+	color: #444;
+	outline: none;
+	border: none;
+	background: white
+	
+}
+.compra .inputBox .card-holder-input::placeholder,
+.compra .inputBox .card-number-input::placeholder{
+	color: rgba(129, 125, 125, 0.6);
+	font-size: 13px;
+	font-style: italic;
+}
+
+
+
+.compra .contenedor form .flexbox{
+	display: flex;
+	gap: 15px;
+
+}
+
+.compra .contenedor form .flexbox .inputBox{
+	flex: 1 1 150px;
+	margin-left: 5px;
+}
+
+.compra .contenedor form .submit-btn{
+	color: #ffffff;
+    background-color: #333;
+    padding: 12px 25px;
+    letter-spacing: 1px;
+    font-family: 'Roboto';
+    border: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+    transition: all .2s;
+	margin-top: 5px;
+	position: absolute;
+	
+}
+
+.compra .contenedor form .submit-btn button{
+	outline: none;
+	background: #333;
+	font-size: 14px;
+	font-family: 'Roboto';
+	color: white;
+	border: none;
+	font-weight: bold;
+}
+
+
+  
+
+
+.compra .contenedor .card-container{
+	margin-bottom: -150px;
+	margin-top: 60px;
+	position: relative;
+	height: 230px;
+	width: 300px;
+	transform-style: preserve-3d;
+	backdrop-filter: blur(10px);
+	
+}
+
+.compra .contenedor .card-container .front{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0; left: 0;
+	object-fit: contain;
+	background-image: url(/images/worldmap.jpg);
+	background-size: 400px; 
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	backface-visibility: hidden;
+	box-shadow: 0 15px 25px rgb(0,0,0,0.2);
+	color: #fff;
+	padding: 20px;
+	transition: transform .5s ease-out;
+	transform:perspective(1000px) rotateY(0deg);
+	transform-style: preserve-3d;
+	backdrop-filter: blur(10px);
+}
+
+
+
+
+.compra .contenedor .card-container .front .image{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 10px;
+
+}
+
+.compra .contenedor .card-container .front::before{
+	content: '';
+	position: absolute;
+	bottom: 40px;
+	right: 15px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: 0.5;
+}
+
+.compra .contenedor .card-container .front::after{
+	content: '';
+	position: absolute;
+	bottom: 40px;
+	right: 45px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: 0.7;
+}
+
+.compra .card-holder-name,
+.compra .expiracion{
+	padding-top: 5px;
+}
+
+.compra .contenedor .card-container .front .card-number-box{
+	padding: 20px 0 15px;
+	font-size: 25px;
+	
+}
+
+.compra .contenedor .card-container .front .flexbox .box:nth-child(1){
+	margin-right: auto;
+
+}
+.compra .contenedor .card-container .front .flexbox {
+	font-size: 15px;
+
+}
+
+.compra .contenedor .card-container .front .image img{
+	height: 50px;
+	
+}
+
+.compra .card-container .back{
+	position: absolute;
+	top: 0; left: 0;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(45deg, #333, rgb(7, 6, 6));
+	border-radius: 5px;
+	color: #fff;
+	padding: 20px 0;
+	text-align: right;
+	backface-visibility: hidden;
+	box-shadow: 0 15px 25px rgb(0,0,0,.2);
+	transform:perspective(1000px) rotateY(180deg);
+	transition: transform .3s ease-out;
+}
+
+.compra .card-container .back .stripe{
+	background: #fff;
+    width: 100%;
+    margin: 10px 0;
+    height: 35px;
+}
+
+.compra .card-container .back .box {
+	padding: 0 20px;
+	position: relative;
+}
+
+.compra .card-container .back .box span{
+	color: #fff;
+	font-size: 15px;
+	position: relative;
+    bottom: -60px;
+
+}
+.compra .card-container .back .box .cvv-box{
+	height: 30px;
+	padding: 10px;
+	margin-top: 5px;
+	color: #333;
+	background: #fff;
+	width: 100%;
+	margin-top: 70px;
+}
+
+.compra .card-container .back .box .cvv-box::before{
+	content: '';
+    position: absolute;
+    top: 83px;
+    left: 18px;
+    height: calc(100% - 80px);
+    width: calc(100% - 77px);
+    border-radius: 4px;
+    background: repeating-linear-gradient(45deg, #ededed, #ededed 5px, #f9f9f9 5px, #f9f9f9 10px);
+}
+
+
+
+
+
+.compra .card-container .back .box p{
+	color: white;
+    font-size: 11px;
+    text-align: justify;
+    position: absolute;
+    bottom: -70%;
+    right: 1%;
+    margin: 15px 15px;
+}
+
+
+
+
+/* Media quierys*/
+
+@media (min-width: 426px){
+.compra .contenedor .card-container{
+	width: 300px;
+}
+
+.compra .contenedor form {
+    width: 400px;
+
+}
+}
+
+@media (min-width: 580px){
+	.compra .contenedor form {
+		width: 500px;
+	}
+
+}
+
+
+@media (min-width: 769px){
+	.compra .contenedor .card-container{
+		width : 35%
+		}
+		
+		
+		
+		.compra .contenedor form {
+			width: 60%;
+		
+		}
+
+}
+
+
+
+

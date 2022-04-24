@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body class="detail">
+    <%- include('../partials/header') %>
+
+    <main class="cont-main">
+
+        <p class="titulo-tab">Lista de productos</p>
+        <span class="crea-prod">Agregar nuevo producto</span>
+        <a class="icon-c" href="/admin/products/create">
+            <i class="far fa-plus-square"></i>
+        </a>
+        
+        <table>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Nombre</th>
+                <th scope="col" class="des">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col" class="cat">Categoría</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% products.forEach((product, index) => { %>
+                    <tr>
+                        <th scope="row"><%= index + 1 %></th>
+                        <td><%= product.name %></td>
+                        <td class="des"><%= product.description %></td>
+                        <td>$<%= product.price %></td>
+                        <td class="cat"><%= product.category.name %></td>
+                        <td>
+                            <div class="box-icon-g">
+                                <a class="icon-c" href="/admin/products/edit/<%= product.id %>">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form
+                                    id="product-delete"
+                                    action="/admin/products/delete/<%= product.id %>?_method=DELETE"
+                                    method="POST">
+                                    <button class="icon-c cubo" type='submit'>
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+    </main>
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
+</body>
+</html>

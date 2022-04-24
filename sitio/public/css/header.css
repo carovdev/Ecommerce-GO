@@ -1,0 +1,327 @@
+ul{
+  list-style: none;
+}
+
+.container{
+  width: 100%;
+}
+
+
+/*=============== HEADER ===============*/
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--container-color);
+  z-index: var(--z-fixed);
+  transition: .4s;
+  box-shadow: -10px -10px 20px 0px #fff9,
+  -4px -4px 5px 0px #fff9,
+  7px 7px 20px 0px #0002,
+  4px 4px 5px 0px #0001,
+  inset 0px 0px 0px 0px #0001,
+  inset 0px 0px 0px 0px #fff9,
+  inset 0px 0px 0px 0px #0001;
+  transition: box-shadow 0.6 cubic-bezier(0.79,0.21,0.06,0.81);
+  
+}
+
+/*=============== BUSCADOR ===============*/
+.buscar{
+  border: none;
+  background-color: white;
+  color: #1F1D1D;
+  outline: none;
+  width: 0;
+  transition: .3s;
+}
+
+.buscador-ip .form-search:hover > .buscar{
+  width: 130px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50px;
+  font-size: 20px;
+  box-shadow: -10px -10px 20px 0px #fff9,
+  -4px -4px 5px 0px #fff9,
+  7px 7px 20px 0px #0002,
+  4px 4px 5px 0px #0001,
+  inset 0px 0px 0px 0px #0001,
+  inset 0px 0px 0px 0px #fff9,
+  inset 0px 0px 0px 0px #0001;
+  transition: box-shadow 0.6 cubic-bezier(0.79,0.21,0.06,0.81);
+  font-size: 12px;
+  padding-left: 16px;
+  font-weight: 600;
+}
+
+.boton-header{
+  background-color: transparent;
+  outline: none;
+  padding: 5px;
+  border: none;
+  border-radius: 50px;
+  font-size: 20px;
+ 
+  
+}
+/*=============== FIN BUSCADOR ===============*/
+
+/* =========BURGUER ============*/
+.hamburguesa{
+  font-size: 20px;
+  position: relative;
+  top: -2px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 8px;
+  border-radius: 50px;
+  font-size: 20px;
+  padding: 5px;
+  
+}
+
+.capa .container-menu{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.capa .cont-menu{
+  width: 100%;
+  max-width: 250px;
+  background-color: white;
+  height: 100vh;
+  position: relative;
+  transition: all 500ms ease;
+  transform: translateX(-100%);
+  z-index: 10000;
+}
+
+.capa .cont-menu nav{
+  transform: translateY(15%);
+}
+
+.capa .cont-menu nav a{
+  display: block;
+  text-decoration: none;
+  padding: 20px;
+  color: #333;
+  border-left: 5px solid transparent;
+  transition: all 400ms ease;
+  font-family: 'Roboto'; 
+  font-weight: bold;
+  
+}
+
+.capa .cont-menu nav a:hover{
+  border-left: 5px solid #333;
+  box-shadow: 0 -1px 12px hsl(var(--hue),var(--sat),15%,0.15);
+  color: #333;
+  transition: 1s;
+}
+
+.capa .cont-menu label{
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  color: black;
+  cursor: pointer;
+  font-size: 18px;
+}
+.capa #menu:checked ~ .container-menu .cont-menu{
+  transform: translateX(0%);
+}
+
+.capa #menu:checked ~ .container-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.capa #menu{
+  position: relative;
+top: -24px;
+left: 11px;
+display: none;
+}
+
+header .navegador{
+  display: none;
+}
+
+.capa .nav__icon {
+  padding-right: 10px;
+  --ionicon-stroke-width: 40px;
+  font-size: 20px;
+  position: relative;
+bottom: -3px;
+}
+
+/* =========FIN BURGUER ============*/
+
+/*=============== NAV ===============*/
+.nav{
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto';
+  position: relative;
+}
+
+
+@media screen and (max-width: 767px) {
+  .nav__menu{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--container-color);
+    box-shadow: 0 -1px 12px hsl(var(--hue),var(--sat),15%,0.15);
+    width: 100%;
+    height: 5rem;
+    padding: 0 1rem;
+    display: grid;
+    align-content: center;
+    border-radius: 1.25rem 1.25rem 0 0;
+    transition: .4s;
+  }
+}
+
+.nav__logo img{
+  width: 90px;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.nav__list,
+.nav__link{
+  display: flex;
+}
+
+.nav__link {
+  flex-direction: column;
+  align-items: center;
+  row-gap: .10rem;
+  color: var(--title-color);
+  font-weight: 600;
+  font-size: 24px;
+}
+
+
+
+
+.nav__list{
+  justify-content: space-around;
+}
+
+.nav__name{
+  font-size: var(--tiny-font-size);
+}
+
+.nav__icon{
+  font-size: 1.5rem;
+  padding: 5px;
+  border-radius: 50px;
+  box-shadow: -7px -7px 20px 0px #fff9,
+  -4px -4px 5px 0px #fff9,
+  7px 7px 20px 0px #0002,
+  4px 4px 5px 0px #0001,
+  inset 0px 0px 0px 0px #0001,
+  inset 0px 0px 0px 0px #fff9,
+  inset 0px 0px 0px 0px #0001;
+  transition: box-shadow 0.6 cubic-bezier(0.79,0.21,0.06,0.81);
+}
+
+.nav__icon:active{
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,0.5),
+  -4px -4px 6px 0 rgba(116,125,136,0.2),
+  inset -4px -4px 6px 0 rgba(255,255,255,0.3),
+  inset 4px 4px 6px 0 rgba(116,125,136,0.3);
+}
+
+.nav__icon:focus{
+  border:none;
+  outline:none;
+  box-shadow: none;
+  box-shadow: -4px 6px 0 rgba(116,125,136,0.2),
+  4px 4px 6px 0 rgba(255,255,255,0.5),
+  4px 4px 6px 0 rgba(116,125,136,0.3),
+  -4px -4px 6px 0 rgba(255,255,255,0.3),
+}
+
+/*=============== FIN NAV ===============*/
+
+
+/*=============== MEDIA QUERYS===============*/
+
+@media screen and (min-width: 576px) {
+
+.nav__list{
+  justify-content:space-evenly;
+}
+}
+
+
+@media screen and (min-width: 767px){
+  .nav__logo img{
+    width: 100px;
+    margin-top: 25px;
+    margin-left: 30px;
+  }
+
+  .nav {
+     height: var(--header-height);
+  }
+  .buscador-ip .form-search:hover > .buscar{
+    width: 180px;
+  }
+  
+  .nav__item{
+    padding-right: 18px;
+  }
+
+  .nav__item i{
+    display: none;
+  }
+
+.nav__name{
+  font-size: 14px;
+  
+    padding-left: 10px;
+
+}
+
+.nav__logo img{
+  width: 100px;
+  margin-top: 20px
+}
+
+.header{
+  height: var(--header-height1);
+}
+
+.nav__link:hover:before{
+  content: '';
+    position: absolute;
+    bottom: 10px;
+    width: 4px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.nav__home{
+  border: none;
+}
+}
+

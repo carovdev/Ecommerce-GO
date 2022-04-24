@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <main class="registro" >
+        <section id="form-profile" class="log" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="titulo">Perfil de <%= user.name %></h2> 
+             
+            <p class="input-g">Nombre: <span><%= user.name %></span></p>
+
+            <p class="input-g">Apellido: <span><%= user.lastName %></span></p>
+
+            <p class="input-g">E-mail: <span><%= user.email %></span></p>
+
+            <p class="input-g">Contraseña: <span disabled type="password" value="<%= user.password %>"></span></p>
+
+            <a href="/users/profileEdit"><button class="btn-g" type="button">Editar perfil</button></a>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
+</body>
+</html>

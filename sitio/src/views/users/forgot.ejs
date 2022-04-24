@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/head') %>
+<body>
+    
+    <%- include('../partials/header') %>
+
+    <main class="registro">
+        <section class="titular">
+          
+        </section>
+        <form class="log" action="/" method="GET" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="titulo">Ingresá tu email</h2>
+            <p class="parrafo">Recibirás un link para restablecer tu contraseña.</p>
+            <input class="input-g" type="email" name="email" placeholder="E-mail" required>
+            <button class="btn-g" type="submit">Enviar email</button>
+        </form>
+    </main>
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
+</body>
+</html>

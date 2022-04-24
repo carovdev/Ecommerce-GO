@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+<body class="carrito">
+    <%- include('partials/header') %>
+
+    <main data-aos="fade-right">
+
+        <ul id="progressbar">
+            <li class="cart"><a href="/cart">Carrito(3)</a></li>
+            <li class="pagos"><a href="/formasDePago">Metodo de Pago</a></li>
+            <li class="finalizar"><a href="/compra">Finalizar</a></li>
+        </ul>
+
+        <section>
+
+            <article class="articulo1">
+                <div class="img-cantidad">
+                    <div class="img-detail">
+                        <img src="/images/products/PRODUCTO8.png" width="80px" height="80px" alt="">
+                        <p class="descripcion"> Vaso Rose </p>
+
+                    </div>
+                    <div class="cantidad">
+                        <form action="">
+                            <button class="menos">-</button><input class="cantidad" type="text" placeholder="1"><button
+                                class="mas">+</button>
+                        </form>
+                        <p class="precio">$299</p>
+                    </div>
+                    <div class="boton-delet">
+                        <form action="">
+                            <button>Eliminar</button>
+                        </form>
+
+                    </div>
+                </div> <!-- END: img-cantidad -->
+            </article>
+
+            <article class="articulo1">
+                <div class="img-cantidad">
+                    <div class="img-detail">
+                        <img src="/images/products/PRODUCTO6.png" width="80px" height="80px" alt="">
+                        <p class="descripcion">Copas de coctel</p>
+                    </div>
+                    <div class="cantidad">
+                        <form action="">
+                            <button class="menos">-</button><input class="cantidad" type="text" placeholder="1"><button
+                                class="mas">+</button>
+                        </form>
+                        <p class="precio">$150</p>
+                    </div>
+                    <div class="boton-delet">
+                        <form action="">
+                            <button>Eliminar</button>
+                        </form>
+
+                    </div>
+                </div> <!-- END: img-cantidad -->
+            </article>
+
+
+        </section>
+
+        <section class="envio1">
+
+            <p class="envio-cp">Envío a C.P:1234,Buenos Aires</p>
+            <p class="precio5">$600</p>
+        </section>
+        <section class="total">
+            <div class="total-envio">
+                <p>Total con Envío</p>
+                <div class="precio">
+                    <p class="precio3">$700</p>
+                </div>
+            </div>
+            <div class="boton1">
+                <a href="/formasDePago"><button type="button">CONTINUAR</button></a>
+            </div>
+
+
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
+    <%- include('partials/scripts') %>
+</body>
+
+
+</html>

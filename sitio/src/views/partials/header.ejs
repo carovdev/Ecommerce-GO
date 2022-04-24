@@ -1,0 +1,97 @@
+<header class="header" id="header">
+
+    <!-- NAVEGADOR -->
+    <nav class="nav container">
+        <a href="/" class="nav__logo"><img src="/images/giveOneTNC2.png" alt=""></a>
+    <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list"> 
+            <li class="nav__item">
+                <a href="/" class="nav__link active__link">
+                 <i class='bx bx-home nav__icon' ></i>
+                <span class="nav__name nav__home">Home</span>
+            </a>
+            </li>
+
+            <% if (locals.userLogin) { %>
+                <li class="nav__item">
+                    <a href="/users/profile" class="nav__link active__link">
+                    <i class='bx bx-face nav__icon' ></i>
+                    <span id="user-name" class="nav__name">Mi perfil</span>
+                </a>
+                </li>
+                <li class="nav__item">
+                    <a href="/users/logout" class="nav__link active__link">
+                    <i class='bx bx-user-x nav__icon' ></i>
+                    <span class="nav__name">Cerrar Sesión</span>
+                </a>
+                </li>
+               
+            <% } else { %>
+                <li class="nav__item">
+                    <a href="/users/login" class="nav__link active__link">
+                    <i class='bx bx-user nav__icon' ></i>
+                    <span class="nav__name">Iniciar Sesión</span>
+                </a>
+                </li>
+                <li class="nav__item">
+                    <a href="/users/registro" class="nav__link active__link">
+                     <i class='bx bx-spreadsheet nav__icon' ></i>
+                    <span class="nav__name">Registrarme</span>
+                </a>
+    
+                </li>
+            <% } %>
+            
+            <li class="nav__item">
+                <a href="/cart" class="nav__link active__link">
+                 <i class='bx bx-cart nav__icon' ></i>
+                <span class="nav__name">Mi Carrito</span>
+            </a>
+
+            </li>
+            <% if (locals.userLogin && locals.userLogin.rolId === 1) { %>
+                <li class="nav__item">
+                    <a href="/admin/products" class="nav__link active__link">
+                    <i class='bx bx-customize nav__icon' ></i>
+                    <span class="nav__name">Admin</span>
+                </a>
+    
+                </li>
+            <% } %>
+            
+        </ul>
+    </div>
+
+    <div class="buscador-ip">
+        <form id="form-search" class="form-search" action="/search">
+            <input id="search" class="buscar" type="search" name="search" autocomplete="off" placeholder="Search...">
+            <button class="boton-header" type="submit">
+                <i class='bx bx-search-alt-2' ></i>
+            </button>
+            <label for="menu" class="hamburguesa"> ☰ </label>
+        </form>  
+    </div>
+</div>
+</nav>
+<!-- FIN NAVEGADOR -->
+
+<!-- BURGUER -->
+<div class="capa">
+    <input type="checkbox" id="menu" class="cont-inp">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="/">Cubiertos<i class='bx bx-chevron-right '></i></a></li>
+                <a href="/">Vajilla<i class='bx bx-chevron-right '></i></a></li>
+                <a href="/">Cristalería<i class='bx bx-chevron-right '></i></a></li>
+                <a href="/">Café y Té<i class='bx bx-chevron-right '></i></a></li>
+               
+            </nav>
+            
+            <label for="menu" ><i class="fas fa-times"></i></label>
+        </div>
+    </div>
+</div>
+<!-- FIN BURGUER -->
+
+</header>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head',{title: "Agregar producto" }) %>
+
+    <body class="register">
+
+        <%- include('../partials/header') %>
+
+            <main class="registro">  
+                <form class="log" id="formulario" action="" method="POST" enctype="multipart/form-data">
+                    <h2>Agregar Producto</h2>
+                    <!--Grupo:Nombre-->
+                    <div class="formulario__grupo " id="grupo__nombre">
+                        <div class="formulario__grupo-input">
+                            <input class="input-g formulario__input" id="nombre" type="text" name="name"
+                                autocomplete="off" placeholder="Nombre"
+                                value="<%= locals.old && old.name ? old.name : null %>">
+                        </div>
+                        <span class="red-msg">
+                            <%= locals.errors && errors.name ? errors.name.msg : null %>
+                        </span>
+                    </div>
+
+                    <!--Grupo:Descripcion-->
+                    <div class="formulario__grupo" id="grupo__descripcion">
+                        <div class="formulario__grupo-input">
+                            <textarea class="input-g formulario__input" id="descripcion" name="description"
+                                autocomplete="off" placeholder="Descripción"
+                                value="<%= locals.old && old.description ? old.description : null %>"></textarea>
+                        </div>
+                        <span class="red-msg">
+                            <%= locals.errors && errors.description ? errors.description.msg : null %>
+                        </span>
+                    </div>
+
+                    <input class="input-g formulario__input" type="number" name="price" placeholder="Precio"
+                        value=<%=locals.old && old.price ? old.price : null%> >
+                    <span class="red-msg">
+                        <%= locals.errors && errors.price ? errors.price.msg : null %>
+                    </span>
+
+                    <select class="input-g" name="categoryId" id="categoria" class="form-select" <%=locals.errors &&
+                        errors.categoryId? 'is-invalid' : null%>" name="categoryId">
+                        <option value="" selected hidden>Seleccione la categoría</option>
+                        <% categorias.forEach(categoria=> { %>
+                            <option value="<%= categoria.id %>" <%=locals.old ? old.categoryId : null %> ><%=
+                                    categoria.name %>
+                            </option>
+                            <% }) %>
+
+                    </select>
+                    <span class="red-msg">
+                        <%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %>
+                    </span>
+
+                    <!--Grupo:Imagen-->
+                    <div class="formulario__grupo " id="grupo__imagen">
+                        <div class="formulario__grupo-input">
+                            <input class="input-g formulario__input" id="imagen" type="file" name="image" multiple
+                                accept="image/*">
+                        </div>
+                    </div>
+
+                    <!--Botón Enviar-->
+                    <div class="r-btn formulario__grupo formulario__grupo-btn-enviar">
+                        <button class="btn-g formulario__btn" type="submit">Agregar producto</button>
+                    </div>
+                </form>
+            </main>
+            <%- include('../partials/footer') %>
+                <%- include('../partials/scripts') %>
+    </body>
+
+</html>

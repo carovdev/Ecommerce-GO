@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head',) %>
+<body class="detail">
+    <%- include('partials/header') %>
+
+    <main class="detalle">
+            <div class="product">
+                <div class="photo-description">
+                    <section class="photo">
+                        <img src="/images/products/<%= product.images[0].file %>" alt="<%= product.name %>">
+                    </section>
+                    <section class="descripcion" data-aos="fade-up" data-aos-duration="1000">
+ 
+                        <div class="precio">
+                            <h2 class="name"><%= product.name %></h2>
+                            <p class="description-detail"><%= product.description %></p>
+
+                            <div class="color-precio">
+                                <p class="color-select">Color</p>
+                                <select name="" id="">
+                                    <option>Unico</option>
+                                </select>
+                                <span class="price">$<%= product.price %></span>
+                                
+                            </div>
+                            
+                            <div class="favoritos-boton">
+                                <select name="" id="">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                </select>
+                                <button  type="submit"> <a class="boton-detail" href="/users/login"> Agregar al carrito</a></button>
+                                
+                            </div> 
+                        </div> 
+                        <div class="compartir-producto">
+                        <p class="texto-compartir">COMPARTIR</p>
+                        <a href="http://www.facebook.com/sharer.php?u=www.producto.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                       <a href="https://api.whatsapp.com/send?text=www.producto.com" target="_blank"><i class="fab fa-whatsapp"></i></a> 
+                       <a href="https://twitter.com/intent/tweet?text=&url=www.producto.com" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                       
+                        </div>
+
+                        
+                    </div>
+                
+                </section>
+            </div>
+            
+
+    </main>    
+    <%- include('partials/footer') %>
+    <%- include('partials/scripts') %>
+  <script src="/javascript/comentarios.js"></script>
+    
+</body>
+</html>

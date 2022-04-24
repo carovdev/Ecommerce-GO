@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main class="registro">
+                <form class="log" id="form-login" action="" method="POST" data-aos="fade-up" data-aos-duration="1000">
+                    <h2 class="titulo">Inicia sesión</h2>
+                    <input id="email-log" class="input-g" type="email" name="email" autocomplete="off"
+                        placeholder="E-mail" value="<%= locals.old && old.email ? old.email : null %>">
+                    <span id="email-log-error" class="red-msg">
+                        <%= locals.errors && errors.email ? errors.email.msg : null %>
+                    </span>
+
+                    <div class="box-pass">
+                        <input id="pass-log" class="input-g" type="password" name="pass" placeholder="Contraseña">
+                        <span id="pass-log-error" class="red-msg">
+                            <%= locals.errors && errors.pass ? errors.pass.msg : null %>
+                        </span>
+                    </div>
+
+                    <label class="check" for="rec">
+                        <input class="sesion" type="checkbox" name="sesion" id="rec">
+                        Recordar el inicio de mi cuenta
+                    </label>
+                    <a class="password" href="/users/forgot">¿Olvidaste tu contraseña?</a>
+                    <p class="invalid" id="error-empty-log"></p>
+
+                    <div class="buttons">
+                        <button class="btn-g" type="submit">Ingresar</button>
+                    </div>
+                </form>
+            </main>
+            <%- include('../partials/footer') %>
+                <%- include('../partials/scripts') %>
+    </body>
+
+</html>

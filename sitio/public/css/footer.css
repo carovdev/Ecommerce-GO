@@ -1,0 +1,257 @@
+footer{
+    background-color:#1F1D1D;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+footer .listas{
+    padding-top: 30px;
+    color: white;
+    text-align: center;
+}
+
+footer .dias{
+    position: relative;
+    left: -10px;
+}
+
+footer .listas .contenedor-navegacion a , .contenedor-redes a , .contenedor-venta a{
+    position: relative;
+    bottom: 10px;
+}
+
+footer .listas .contenedor-navegacion p .about{
+    bottom: 0;
+    text-decoration: none;
+    color: white;
+}
+
+footer .contenedor-subs form{
+    margin-top: 3px;
+    padding-top: 12px;
+}
+
+footer .contenedor-navegacion .redirec-about{
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+footer .listas  p{
+    font-family: 'Roboto';
+    padding-bottom: 13px;
+    font-size: 12px;
+    left: 1px;
+    width: fit-content;
+    position: relative;    
+}
+
+footer .contenedor-venta .whatsapp i{
+    background-color: green;
+    border-radius: 10px;
+}
+
+footer .contenedor-subs{
+    position: relative;
+    bottom: 8px;
+}
+
+footer .contenedor-subs label{
+    font-family: 'Roboto';
+    font-size: 20px;
+    position: relative;
+    top: -5px;
+}
+
+footer .contenedor-subs p{
+    font-family: 'Roboto';
+}
+
+footer .contenedor-subs button{
+    cursor: pointer;
+}
+
+footer hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid white;
+    margin: 20px auto;
+}
+
+footer .copyright{
+    padding-bottom: 15px;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    font-family: 'Roboto';
+}
+
+footer .social-icons .fab{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    background: white;
+    margin-right: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+footer .contenedor-subs form , .contenedor-subs p {
+    display: none;
+}
+
+footer .contenedor-navegacion{
+    display: none;
+}
+
+footer .contenedor-subs .underline{
+    display: none;
+}
+
+footer .underline{
+    width: 80px;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    margin-top: 20px;
+    margin-right: 10px;
+    overflow: hidden;    
+}
+
+footer .underline span{
+    width: 15px;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}
+
+@keyframes moving {
+    0%{
+        left: -20px;
+    }
+    100%{
+        left: 100%;
+    }   
+}
+
+footer  .contenedor-venta{
+    display: flex;
+    flex-direction: column;
+   
+    margin-bottom: 30px
+}
+
+footer .horario {
+    position: relative;
+    left: -43px;
+}
+
+footer .contenedor-venta a{
+    font-size: 18px;
+}
+
+@media (min-width: 10px) and (max-width: 425px){
+
+    footer .contenedor-venta {
+        
+        align-items: center; 
+        
+    }
+
+}
+
+
+/* Tablet*/
+@media (min-width: 426px){
+
+    footer .contenedor-subs .underline{
+        display: inline-block;
+        position: absolute;
+        left: 1px;
+        top: 4px;
+    }
+    .contenedor-subs p {
+        display: inline-block;
+    }
+
+    footer .listas{   
+        display: flex;
+        text-align: justify;
+        justify-content: space-around;
+    }
+    
+    footer .contenedor-subs form{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: solid 1px white;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    footer .contenedor-subs form .far{
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    
+    footer .contenedor-subs form input{
+        background-color: transparent;
+        color: white;
+        border: 0;
+        outline: none;
+    }
+
+    footer .contenedor-subs form button{
+        background: transparent;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+    }
+
+    footer .contenedor-subs form button .fas{
+        font-size: 16px;
+        color: white;
+    }
+    
+    footer .underline{
+        margin-bottom: 10px;
+    }
+
+    footer .venta-nav {
+        padding-top: 30px;
+        color: white;
+        text-align: center; 
+        display: flex;
+    }
+}
+
+/* desktop*/
+@media (min-width: 768px){
+
+    .contenedor-subs p {
+        display: inline-block;
+    }
+
+    footer .contenedor-navegacion{
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer .contenedor-subs form{
+        margin-bottom: 20px;
+    }
+}

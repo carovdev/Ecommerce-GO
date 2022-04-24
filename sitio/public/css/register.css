@@ -1,0 +1,87 @@
+.registro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+.registro::before{
+    content: '';
+    width: 100%;
+    height: 180px;
+    background-image: url(/images/prueba3.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0px 0px 50px 50px;
+}
+.registro .titular{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    max-width: 550px;
+}
+.registro .titular .titulo{
+    margin: 15px 0;
+}
+.registro .titular .parrafo{
+    margin-bottom: 15px;
+    text-align: center;
+}
+.registro .titular .box-img{
+    display: none;
+}
+.registro .log{
+    width: 100%;
+    height: 500px;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    position: relative;
+    top: -70px;
+    box-shadow: 1px 10px 5px #d7d7d7;
+    
+}
+.registro .log .input-g{
+    padding: 7px;
+    margin: 10px 0 0;
+    width: 300px;
+    outline: none;
+    border: none;
+    border-bottom: solid 1px #e9e9e9;
+}
+
+.registro .log .r-btn{
+    text-align: center;
+}
+.registro .log .r-btn .radio{
+    width: 5%;
+}
+.registro .log .btn-g{
+    padding: 10px 30px;
+    margin: 20px 0;
+    border: none;
+    color: #fff;
+    background-color: rgb(43, 42, 42);
+    cursor: pointer;
+}
+
+/* media queries */
+@media (min-width: 769px) {
+    .registro{
+        justify-content: center;
+    }
+    .registro .titular{
+        margin: 0 10px;
+    }
+    .registro .titular .box-img{
+        display: block;
+    }
+    .registro .titular .box-img .coffee{
+        width: 150px;
+        height: 100px;
+    }
+}

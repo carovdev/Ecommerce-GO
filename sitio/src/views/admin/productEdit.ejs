@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head', {title: "Editar Producto : " + product.name}) %>
+
+    <body class="register">
+        <%- include('../partials/header') %>
+
+            <main class="registro">
+                <form class="log" id="formulario" action="/admin/products/edit/<%= product.id %>?_method=PUT"
+                    method="POST">
+                    <section class="titular">
+                        <h2 class="titulo">Actualización del producto</h2>
+                        <p class="parrafo">
+                            <%= product.name %>
+                        </p>
+                        <!--Grupo:Nombre-->
+                        <div class="formulario__grupo " id="grupo__nombre">
+                            <div class="formulario__grupo-input">
+                                <input class="input-g formulario__input" id="nombre" type="text" name="name"
+                                    placeholder="Nombre" value="<%= product.name %>">
+                            </div>
+                            <span class="red-msg">
+                                <%= locals.errors && errors.name ? errors.name.msg : null %>
+                            </span>
+                        </div>
+
+                        <!--Grupo:Descripcion-->
+                        <div class="formulario__grupo" id="grupo__descripcion">
+                            <div class="formulario__grupo-input">
+                                <textarea class="input-g formulario__input" id="descripcion" name="description"
+                                    placeholder="Descripción" value=""><%= product.description %></textarea>
+                            </div>
+                            <span class="red-msg">
+                                <%= locals.errors && errors.description ? errors.description.msg : null %>
+                            </span>
+                        </div>
+
+
+                        <input class="input-g" type="number" name="price" id="price" placeholder="Precio"
+                            value="<%= product.price %>">
+                        <span class="red-msg">
+                            <%= locals.errors && errors.price ? errors.price.msg : null %>
+                        </span>
+
+
+
+                        <select class="input-g" name="categoryId" id="categoryId">
+                            <% categories.forEach(categoria=> { %>
+                                <option value="<%= categoria.id %>" <%=product.categoryId===categoria.id ? 'selected' :
+                                    null %> ><%= categoria.name %>
+                                </option>
+                                <% }) %>
+                        </select>
+
+
+
+                        <span class="red-msg">
+                            <%= locals.errors && errors.categoryId ? errors.categoryId.msg : null %>
+                        </span>
+
+                        <input class="input-g" id="images" type="file" name="image" accept="image/*" value="">
+
+                        <div class="r-btn">
+                            <button class="btn-g" type="submit">Guardar cambios</button>
+                        </div>
+                </form>
+            </main>
+            <%- include('../partials/footer') %>
+                <%- include('../partials/scripts') %>
+    </body>
+
+</html>
